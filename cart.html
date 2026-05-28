@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="cart.css" />
+        <script src="https://kit.fontawesome.com/beaaf16935.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <title>BETABYTE</title>
+    </head>
+    <body>
+        <header>
+            <h1>BETA BYTE</h1>
+            <!-- NAVIGATION LINKS -->
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="products.html">PRODUCTS</a>
+                <a href="cart.html" class="active">CART</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+
+            <div class="search-bar" style="visibility: hidden; opacity: 0">
+                <input type="text" id="search-bar" placeholder="Search" />
+                <button id="search-btn">Search</button>
+            </div>
+
+            <!-- SIGN IN / SIGN UP -->
+            <div class="login-container">
+                <button class="btn sign-up-btn">Sign Up</button>
+                <button class="btn sign-in-btn">Log In</button>
+            </div>
+        </header>
+
+        <section>
+            <section>
+                <h2 style="margin: 50px 40px">CART</h2>
+                <p class="empty-message" style="font-size: 1.3rem"></p>
+                <div class="cart-items">
+                    <!-- CART CARD -->
+                    <!-- <div class="cart-card">
+                        <div class="cart-image">
+                            <img src="assets/pics/Card.png" alt="" />
+                        </div>
+                        <div class="cart-body">
+                            <h3 class="cart-name">MSI KATANA GAMING</h3>
+                            <p class="cart-price">₱45,500</p>
+                            <div class="cart-button-container">
+                                <button class="cart-remove-btn">Remove</button>
+                                <button class="cart-buy-btn">Check Out</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+        </section>
+        <script src="main.js" defer></script>
+    </body>
+</html>

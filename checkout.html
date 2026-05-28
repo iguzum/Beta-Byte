@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="checkout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/beaaf16935.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Checkout</title>
+</head>
+
+<body>
+    <div class="top">
+        <a href="products.html"><i class="fa-solid fa-chevron-left"></i> BACK</a>
+        <h2>Checkout</h2>
+        <span></span>
+    </div>
+
+    <div class="container">
+        <!-- LEFT -->
+        <div class="left">
+            <div class="box">
+                <h3>Customer Information</h3>
+                <div class="info">
+                    <p><i class="fa-solid fa-user fa-sm"></i> <b>Name :</b> Mark Jay Capinding</p>
+                    <p><i class="fa-solid fa-location-dot fa-sm"></i> <b>Address :</b> 343 Sapang, Santa Barbara,
+                        Pangasinan</p>
+                    <p><i class="fa-solid fa-phone fa-sm"></i> <b>Contact :</b> 09709587119</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Customer Reviews</h3>
+
+                <div class="reviews">
+                    <div class="review-card">
+                        <div class="review-name">Capinding</div>
+                        <div class="review-text">Fast delivery sya mga lods!</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-name">Buctot</div>
+                        <div class="review-text">Smoothie transaction.</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-name">Clores</div>
+                        <div class="review-text">Great product!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Payment Method</h3>
+                <div class="payment">
+                    <button class="pay-btn active" onclick="pay(this)"><i class="fa-solid fa-truck"></i> COD</button>
+                    <button class="pay-btn" onclick="pay(this)"><i class="fa-brands fa-cash-app fa-lg"></i>
+                        GCash</button>
+                    <button class="pay-btn" onclick="pay(this)"><i class="fa-solid fa-credit-card fa-lg"></i>
+                        Card</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Shipping Option</h3>
+                <select>
+                    <option>J&T Express</option>
+                    <option>LBC</option>
+                    <option>Ninja Van</option>
+                </select>
+            </div>
+            <!-- Discount -->
+            <div class="box">
+                <h3>Vouchers</h3>
+                <input type="text" placeholder="Enter discount code" />
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="box product">
+            <div class="img-container">
+                <img src="assets/pics/product-images/Msi katana gaming.png" />
+            </div>
+
+            <h2 class="product-name">MSI Katana Gaming</h2>
+            <div class="price">₱85,990</div>
+            <div class="description">
+                Intel Core i7-13620H | NVIDIA RTX 4050 | 16GB DDR5 up to 64GB RAM | 512GB-1TB NVMe SSD Storage | 15.6"
+                Full HD(144hz) Display |
+                Battery Capacity 4700mAh | WiFi 6 / HDMI 2.1 / USB-C Thuderbolt.
+            </div>
+            <div class="summary">
+                <div class="row"><span>Subtotal</span><span>₱85,990</span></div>
+                <div class="row"><span>Shipping</span><span>₱150</span></div>
+                <div class="row"><span>Discount</span><span>₱0</span></div>
+                <div class="row total"><span>Total</span><span>₱86,140</span></div>
+            </div>
+
+            <div class="bottom-controls">
+                <button class="checkout-btn">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Checkout page
+        const product = JSON.parse(localStorage.getItem("selectedProduct"));
+        if (product) {
+            // Image
+            document.querySelector(".product img").src = product.img;
+
+            // Name
+            document.querySelector(".product h2").textContent = product.name;
+
+            // Price
+            document.querySelector(".product .price").textContent = "₱" + product.price.toLocaleString();
+
+            // Description
+            document.querySelector(".product .description").textContent = product.description;
+
+            // Summary
+            const shipping = 150;
+            const total = product.price + shipping;
+
+            const rows = document.querySelectorAll(".summary .row span:last-child");
+
+            rows[0].textContent = "₱" + product.price.toLocaleString(); // subtotal
+            rows[1].textContent = "₱" + shipping.toLocaleString(); // shipping
+            rows[2].textContent = "₱0"; // discount
+            rows[3].textContent = "₱" + total.toLocaleString(); // total
+        }
+
+        function pay(btn) {
+            document.querySelectorAll(".pay-btn").forEach((b) => {
+                b.classList.remove("active");
+            });
+            btn.classList.add("active");
+        }
+
+        const check_out_btn = document.querySelector(".checkout-btn");
+        check_out_btn.addEventListener("click", () => {
+            Swal.fire({
+                title: "Purchased success!",
+                text: "Please wait your order to deliver.",
+                icon: "success",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem("selectedProduct"); // Delete the product
+                    window.location.href = "products.html"; // Go back to products
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

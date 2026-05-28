@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="login.css" />
+        <title>Log In</title>
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="image-container">
+                <img src="assets/pics/Login background.png" alt="" />
+            </div>
+
+            <form action="">
+                <h1 style="margin-bottom: 20px">Log in your Account</h1>
+
+                <div class="input-container">
+                    <div class="container">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" placeholder="Example@gmail.com" required />
+                    </div>
+
+                    <div class="container">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Example123" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Log In</button>*
+
+                <p>Don't have an Account?<a href=""> Create Account</a></p>
+                <div class="divider" style="margin-top: 10px; font-size: 16px; color: var(--muted-color)">Or Log in with</div>
+
+                <div class="third-party">
+                    <button class="third-party-btn"><img src="assets/pics/Google-icon.png" alt="" height="30" />Google</button>
+                    <button class="third-party-btn"><img src="assets/pics/Google-icon.png" alt="" height="30" />Facebook</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://kit.fontawesome.com/beaaf16935.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="product.css" />
+
+        <title>Products</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>BETA BYTE</h1>
+
+            <!-- NAVIGATION -->
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="products.html" class="active">PRODUCTS</a>
+                <a href="cart.html">CART</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+
+            <!-- SEARCH -->
+            <div class="search-bar">
+                <input type="text" id="search-bar" placeholder="Search" />
+                <button id="search-btn">Search</button>
+            </div>
+
+            <!-- AUTH BUTTONS -->
+            <div class="login-container">
+                <button class="btn sign-up-btn">Sign Up</button>
+                <button class="btn sign-in-btn">Log In</button>
+            </div>
+        </header>
+
+        <!-- PRODUCTS -->
+        <section class="products-section">
+            <h2 style="margin: 50px 40px">PRODUCTS</h2>
+
+            <!-- CATEGORY FILTER -->
+            <div class="category-navigation">
+                <span id="allBtn" class="category-btn active">All</span>
+                <span id="laptopBtn" class="category-btn">Laptop</span>
+                <span id="phoneBtn" class="category-btn">Phone</span>
+                <span id="monitorBtn" class="category-btn">Monitor</span>
+                <span id="peripheralsBtn" class="category-btn">Peripheral</span>
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div class="products-grid">
+                <!-- Cards rendered via JS -->
+            </div>
+            <p class="no-products-message">No products found</p>
+        </section>
+
+        <!-- MAIN SCRIPT -->
+
+        <script src="main.js" defer></script>
+    </body>
+</html>
